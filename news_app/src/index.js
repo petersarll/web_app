@@ -1,5 +1,10 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { prisma } = require('./generated/prisma-client')
+const Query = require('./resolvers/Query')
+const Mutation = require('./resolvers/Mutation')
+const User = require('./resolvers/User')
+const Link = require('./resolvers/Link')
+const Subscription = require('./resolvers/Subscription')
 
 async function main() {
   // Create a new link
@@ -23,20 +28,11 @@ type Query {
 `
 
 const resolvers = {
-    Query: {
-      info: () => `This is the API of a news`,
-      feed: (root, args, context, info) => {
-        return context.prisma.links()
-      },
-    },
-    Mutation: {
-      post: (root, args, context) => {
-        return context.prisma.createLink({
-          url: args.url,
-          description: args.description,
-        })
-      },
-    },
+    Query,
+    Mutation,
+    Subscription,
+    User,
+    Link
   }
 
 // 3
