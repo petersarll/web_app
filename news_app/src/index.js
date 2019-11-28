@@ -5,6 +5,7 @@ const Mutation = require('./resolvers/Mutation')
 const User = require('./resolvers/User')
 const Link = require('./resolvers/Link')
 const Subscription = require('./resolvers/Subscription')
+const Vote = require('./resolvers/Vote')
 
 async function main() {
   // Create a new link
@@ -32,7 +33,8 @@ const resolvers = {
     Mutation,
     Subscription,
     User,
-    Link
+    Link,
+    Vote,
   }
 
 // 3
