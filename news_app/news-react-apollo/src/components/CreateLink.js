@@ -7,7 +7,6 @@ const POST_MUTATION = gql`
   mutation PostMutation($description: String!, $url: String!) {
     post(description: $description, url: $url) {
       id
-      createdAt
       url
       description
     }
@@ -41,11 +40,10 @@ class CreateLink extends Component {
           />
         </div>
         <Mutation mutation={POST_MUTATION} variables={{ description, url }}>
-          {() => (
-          <button onClick={`... you'll implement this 🔜`}>
+          {postMutation =>
+          <button onClick={postMutation}>
           Submit
-          </button>
-          )}
+          </button>}
         </Mutation>
       </div>
     )
