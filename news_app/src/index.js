@@ -15,7 +15,6 @@ async function main(){
 }
 main().catch(e => console.error(e))
 
-// 1
 const typeDefs = `
 type Query {
   info: String!
@@ -31,7 +30,6 @@ const resolvers = {
     Vote,
   }
 
-// 3
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers,
