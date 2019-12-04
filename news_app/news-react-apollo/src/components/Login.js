@@ -1,15 +1,6 @@
 import React, { Component } from 'react'
 import { AUTH_TOKEN } from '../constants'
 
-const SIGN_UP = gql`
-  {
-      mutation {
-          
-      }
-
-  }  
-`
-
 class Login extends Component {
   state = {
     login: true, // switch between Login and SignUp
