@@ -7,8 +7,19 @@ const FEED_QUERY = gql`
   {
     feed {
       links {
-        description
+        id
         url
+        description
+        postedBy {
+          id
+          name
+        }
+        votes {
+          id
+          user {
+            id
+          }
+        }
       }
     }
   }
